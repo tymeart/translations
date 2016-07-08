@@ -1,0 +1,40 @@
+<div class="heading">
+  <h1>Translations</h1>
+  <p>Under each artist is a list of things I’ve translated in chronological order of when the original text was published (not when I translated it).</p>
+</div>
+
+
+<%# @producer.each do |producer| %>
+  <h2 class='name'>[BLUE ENCOUNT]</h2> <%# producer.name %>
+
+  <div class="content-producer">
+    <div class="content-type tweets">
+      <h2>Tweets</h2>
+
+      <ul>
+        <%# producer.tweets.each do |tweet| %>
+          <li><a href="#">Burger restaurant confusion (around July 15th, 2012)</a></li>
+          <!-- <li><a href="#"><%# tweet.name %></a></li> -->
+
+        <%#end%>
+      <ul>
+
+    </div>
+    <div class="content-type blogs">
+      <h2>Blog post</h2>
+      <ul>
+        <%# producer.blogs.each do |blog| %>
+          <li><a href="#">OFF</a></li>
+          <!-- <li><a href="#"><%# blog.name %></a></li> -->
+        <%#end%>
+      </ul>
+    </div>
+    <div class="content-type interviews">
+      <h2>Interviews</h2>
+    </div>
+  </div>
+<%# end %>
+
+
+<!-- rails generate scaffold content_producer name:string -->
+<!-- rails generate scaffold translation title:string translation_type:string body:text content_producer_id:integer -->
