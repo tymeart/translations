@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  translation_type: MyString
+  body: MyText
+  content_producer_id: 1
+
+two:
+  title: MyString
+  translation_type: MyString
+  body: MyText
+  content_producer_id: 1

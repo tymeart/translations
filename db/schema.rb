@@ -11,12 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160712024853) do
+ActiveRecord::Schema.define(version: 20160712051312) do
 
   create_table "content_producers", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "translations", force: :cascade do |t|
+    t.string   "title"
+    t.string   "translation_type"
+    t.text     "body"
+    t.integer  "content_producer_id"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
   end
 
 end
