@@ -4,15 +4,15 @@
 </div>
 
 
-<%# @producer.each do |producer| %>
-  <h2 class='name'>[BLUE ENCOUNT]</h2> <%# producer.name %>
+<% @content_producers.each do |content_producer| %>
+  <h2 class='name'><%= content_producer.name %></h2>
 
   <div class="content-producer">
     <div class="content-type tweets">
       <h2>Tweets</h2>
 
       <ul>
-        <%# producer.tweets.each do |tweet| %>
+        <%# content_producer.tweets.each do |tweet| %>
           <li><a href="#">Burger restaurant confusion (around July 15th, 2012)</a></li>
           <!-- <li><a href="#"><%# tweet.name %></a></li> -->
 
@@ -33,7 +33,9 @@
       <h2>Interviews</h2>
     </div>
   </div>
-<%# end %>
+  <br>
+  <br>
+<% end %>
 
 
 <!-- rails generate scaffold content_producer name:string -->
