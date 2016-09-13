@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th>Title</th>
+      <th>Note</th>
       <th>Translation type</th>
       <th>Body</th>
       <th>Content producer</th>
@@ -17,6 +18,7 @@
     <% @translations.each do |translation| %>
       <tr>
         <td><%= translation.title %></td>
+        <td><%= translation.note %></td>
         <td><%= translation.translation_type %></td>
         <td><%= translation.body %></td>
         <td><%= translation.content_producer_id %></td>
