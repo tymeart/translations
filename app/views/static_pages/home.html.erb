@@ -3,34 +3,21 @@
   <p>Under each artist is a list of things I’ve translated in chronological order of when the original text was published (not when I translated it).</p>
 </div>
 
-
 <% @content_producers.each do |content_producer| %>
   <h2 class='name'><%= content_producer.name %></h2>
 
   <div class="content-producer">
-    <div class="content-type tweets">
-      <h2>Tweets</h2>
+    <div class="content-type translation">
+      <% distinct_translation_types = content_producer.translations.select(:translation_type).collect {|t| t.translation_type}.uniq %>
 
-      <ul>
-        <%# content_producer.tweets.each do |tweet| %>
-          <li><a href="#">Burger restaurant confusion (around July 15th, 2012)</a></li>
-          <!-- <li><a href="#"><%# tweet.name %></a></li> -->
-
-        <%#end%>
-      <ul>
-
-    </div>
-    <div class="content-type blogs">
-      <h2>Blog post</h2>
-      <ul>
-        <%# producer.blogs.each do |blog| %>
-          <li><a href="#">OFF</a></li>
-          <!-- <li><a href="#"><%# blog.name %></a></li> -->
-        <%#end%>
-      </ul>
-    </div>
-    <div class="content-type interviews">
-      <h2>Interviews</h2>
+      <% distinct_translation_types.each do |t_type| %>
+        <h2> <%= t_type.capitalize %></h2>
+        <ul>
+          <% content_producer.translations.where(translation_type: t_type).each do |translation| %>
+            <li><a href="#"><%= translation.title %></a></li>
+          <% end %>
+        </ul>
+      <% end %>
     </div>
   </div>
   <br>
