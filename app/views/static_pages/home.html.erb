@@ -4,16 +4,13 @@
 </div>
 
 <% @content_producers.each do |content_producer| %>
-  <h2 class='name'><%= content_producer.name %></h2>
-
   <div class="content-producer">
+    <h2 class='name'><%= content_producer.name %></h2>
     <div class="content-type translation">
-      <% distinct_translation_types = content_producer.translations.select(:translation_type).collect {|t| t.translation_type}.uniq %>
-
-      <% distinct_translation_types.each do |t_type| %>
-        <h2> <%= t_type.capitalize %></h2>
+      <% content_producer.translations.group_by { |t| t.translation_type }.each do |t_group, translations| %>
+        <h2> <%= t_group.capitalize %> </h2>
         <ul>
-          <% content_producer.translations.where(translation_type: t_type).each do |translation| %>
+          <% translations.each do |translation| %>
             <li><a href="#"><%= translation.title %></a></li>
           <% end %>
         </ul>
