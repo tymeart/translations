@@ -4,7 +4,7 @@ class TranslationsController < ApplicationController
   # GET /translations
   # GET /translations.json
   def index
-    @translations = Translation.all
+    @content_producers = ContentProducer.all
   end
 
   # GET /translations/1
