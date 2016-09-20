@@ -12,9 +12,8 @@
         <ul>
           <% translations.each do |translation| %>
             <li>
-              <a href="#"><%= translation.title %></a>
+              <%= link_to translation.title, translation %>
               <div style="display: none;">
-                <%= link_to 'Show', translation %>
                 <%= link_to 'Edit', edit_translation_path(translation) %>
                 <%= link_to 'Destroy', translation, method: :delete, data: { confirm: 'Are you sure?' } %>
               </div>
