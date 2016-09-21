@@ -1,24 +1,21 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @translation.title %>
-</p>
+<div class="navigational-controls">
+  <%= link_to 'Back', translations_path %>
+  <span style="display: none">
+    <%= link_to 'Edit', edit_translation_path(@translation) %> 
+  </span>
+</div>
 
-<p>
-  <strong>Translation type:</strong>
-  <%= @translation.translation_type %>
-</p>
+<div class="heading">
+  <h1><%= @translation.title %></h1>
+  <h2><%= @translation.content_producer.name %></h2>
+</div>
 
-<p>
-  <strong>Body:</strong>
-  <%= @translation.body %>
-</p>
+<div class="content">
+  <p><%= @translation.body %></p>
+</div>
 
-<p>
-  <strong>Content producer:</strong>
-  <%= @translation.content_producer_id %>
-</p>
-
-<%= link_to 'Edit', edit_translation_path(@translation) %> |
-<%= link_to 'Back', translations_path %>
+<div class="related">
+  <%= link_to 'source', @translation.source %>
+</div>
